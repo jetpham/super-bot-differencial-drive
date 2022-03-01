@@ -1,3 +1,3 @@
-# super-bot-differential-drive
+# Super Bot Differential Drive
 
-A differential swerve drive codebase for differential swerve drivetrain created by Jet Pham on team 4201.
+A differential swerve drive codebase for a differential swerve drivetrain.
