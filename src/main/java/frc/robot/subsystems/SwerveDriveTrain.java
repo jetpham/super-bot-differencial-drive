@@ -14,13 +14,15 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.DriveConstants.ModulePosition;
 import frc.robot.Constants.DriveConstants;
 
-public class SwerveDrive extends SubsystemBase {
-    /** Creates a new ExampleSubsystem. */
-    public SwerveDrive() {}
+public class SwerveDriveTrain extends SubsystemBase {
+    /** Creates a new DifferentialSwerveDriveTrain. */
+    public SwerveDriveTrain() {
+    }
 
-    private Map<ModulePosition, SwerveModuleState> robotSpeedMetersToModuleStates(double forwardVelocity, double sidewaysvelocity, double rotationVelocity) {
+    private Map<ModulePosition, SwerveModuleState> robotVelocityMetersToModuleStates(double forwardVelocity,
+            double sidewaysvelocity, double rotationVelocity) {
         Map<ModulePosition, SwerveModuleState> moduleStates = new HashMap<ModulePosition, SwerveModuleState>();
-        
+
         Vector2d motionVector = new Vector2d(forwardVelocity, sidewaysvelocity);
 
         for (ModulePosition i : ModulePosition.values()) {
@@ -29,7 +31,6 @@ public class SwerveDrive extends SubsystemBase {
         }
 
         return moduleStates;
-
 
     }
 

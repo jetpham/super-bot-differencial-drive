@@ -4,12 +4,17 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class SwerveModule extends SubsystemBase {
+public class DifferentialSwerveModule extends SubsystemBase {
+    TalonSRX[] ModuleMotors= new TalonSRX[2];
     /** Creates a new SwerveModule. */
-    public SwerveModule() {}
+    public DifferentialSwerveModule(TalonSRX motor1, TalonSRX motor2) {
+
+    }
 
     public void setModuleState(SwerveModuleState state) {
         return;
