@@ -8,7 +8,7 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class SwerveModule extends SubsystemBase {
-    /** Creates a new ExampleSubsystem. */
+    /** Creates a new SwerveModule. */
     public SwerveModule() {}
 
     public void setModuleState(SwerveModuleState state) {
