@@ -4,11 +4,9 @@
 
 package frc.robot;
 
-import java.util.HashMap;
 import java.util.Map;
 
-import edu.wpi.first.math.geometry.Pose2d;
-import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Translation2d;
 
 public final class Constants {
     public static final class DriveConstants {
@@ -23,11 +21,12 @@ public final class Constants {
 
         public static final double kTrackWidthMeters = 0;
         public static final double kWheelBaseMeters = 0;
-
-        public static final Map<ModulePosition, Pose2d> modulePositions = Map.of(
-                ModulePosition.BACK_LEFT, new Pose2d(-kTrackWidthMeters / 2, -kWheelBaseMeters / 2, new Rotation2d()),
-                ModulePosition.BACK_RIGHT, new Pose2d(kTrackWidthMeters / 2, -kWheelBaseMeters / 2, new Rotation2d()),
-                ModulePosition.FRONT_LEFT, new Pose2d(-kTrackWidthMeters / 2, kWheelBaseMeters / 2, new Rotation2d()),
-                ModulePosition.FRONT_RIGHT, new Pose2d(kTrackWidthMeters / 2, kWheelBaseMeters / 2, new Rotation2d()));
-    }
+        
+        public static final Map<ModulePosition, Translation2d> modulePositions = Map.of(
+            ModulePosition.BACK_LEFT, new Translation2d(-kTrackWidthMeters / 2, -kWheelBaseMeters / 2),
+            ModulePosition.BACK_RIGHT, new Translation2d(kTrackWidthMeters / 2, -kWheelBaseMeters / 2),
+            ModulePosition.FRONT_LEFT, new Translation2d(-kTrackWidthMeters / 2, kWheelBaseMeters / 2),
+            ModulePosition.FRONT_RIGHT, new Translation2d(kTrackWidthMeters / 2, kWheelBaseMeters / 2)
+        );
+    } 
 }

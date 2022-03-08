@@ -16,6 +16,11 @@ public class DifferentialSwerveModule extends SubsystemBase {
 
     }
 
+    /**
+     * Clockwise negative
+     * 
+     * @param state
+     */
     public void setModuleState(SwerveModuleState state) {
         return;
     }
