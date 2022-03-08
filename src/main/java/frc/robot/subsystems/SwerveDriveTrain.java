@@ -34,20 +34,20 @@ public class SwerveDriveTrain extends SubsystemBase {
         Map<ModulePosition, SwerveModuleState> moduleStates = new HashMap<ModulePosition, SwerveModuleState>();
 
         /** Vector of the robot's motion */
-        Translation2d motionVector = new Translation2d(forwardVelocity, sidewaysVelocity);
+        Translation2d motionVector = new Translation2d(sidewaysVelocity, forwardVelocity);
         
         // For every module position
         for (ModulePosition i : ModulePosition.values()) {
 
             /** Position of the current module */
             Translation2d modulePosition = DriveConstants.modulePositions.get(i);
-
+            
             /** Heading of the vector for the module to rotate the robot */
-            double rotationVectorHeading = Math.atan2(modulePosition.getY(), modulePosition.getX());
+            double rotationVectorHeading = Math.atan2(-modulePosition.getY(), modulePosition.getX());
 
             /** Vector for the module to rotate the robot */
             Translation2d rotationVector =  new Translation2d(
-                -modulePosition.getNorm() * rotationVelocity * Math.cos(rotationVectorHeading),
+                modulePosition.getNorm() * rotationVelocity * Math.cos(rotationVectorHeading),
                 modulePosition.getNorm() * rotationVelocity * Math.sin(rotationVectorHeading));
             
             /** Final sum of the motion and rotation vectors */
